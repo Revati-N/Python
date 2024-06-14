@@ -1,0 +1,13 @@
+from tkinter import *
+
+root = Tk()
+
+myLabel1 = Label(root,text = "Hello World!!")
+myLabel2 = Label(root,text = "My name is Revati.")
+
+#Using Grid to display messages in a row format
+myLabel1.grid(column=0, row=0)
+myLabel2.grid(column=0, row=1) #If we change value for row or column, it will automatically change its position like in a matrix.
+#While using grid, the window doesn't automatically resize as it did for pack
+
+root.mainloop()

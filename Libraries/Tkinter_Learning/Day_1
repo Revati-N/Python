@@ -1,0 +1,9 @@
+from tkinter import *
+# Everything is a widget in tkinter
+root = Tk()
+
+myLabel = Label(root, text = "Hello World")  #Label Widget
+
+myLabel.pack() #Shoving it onto the screen
+
+root.mainloop()
