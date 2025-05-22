@@ -1,6 +1,6 @@
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
-from langchain_community.llms import Ollama # Ollama LLM is technically a third-party LLM
+from langchain_ollama import OllamaLLM # Ollama LLM is technically a third-party LLM
 
 import streamlit as st
 import os
@@ -24,7 +24,11 @@ prompt_template = ChatPromptTemplate.from_messages([
 ])
 
 # Ollama LLM
-llm = Ollama(model ="gemma3")
+llm = OllamaLLM(
+    temperature=0,
+    model="gemma3",
+    verbose=True
+)
 output_parser = StrOutputParser()
 chain = prompt_template | llm | output_parser
 
